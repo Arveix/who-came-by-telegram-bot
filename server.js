@@ -1,6 +1,8 @@
 const app = require('express')();
 const bot = require('./bot');
 
+const port = process.env.PORT || 8080
+
 app.get('/sendMeMessage', async (req, res) => {
   message = req.query.message;
   if (!message) {
@@ -15,4 +17,4 @@ app.get('/sendMeMessage', async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(port);
